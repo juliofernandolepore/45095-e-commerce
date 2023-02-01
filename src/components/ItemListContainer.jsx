@@ -1,7 +1,9 @@
 const ItemlistContainer = ()=>{
     
     return(
-        alert("bienvenido usuario")
+        <>
+        <p>listado de items</p>
+        </>
     )
 }
 export default ItemlistContainer
