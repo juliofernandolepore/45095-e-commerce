@@ -10,6 +10,7 @@ import Eventos from './pages/Eventos'
 import Multimedia from './pages/Multimedia'
 import Proyectos from './pages/Proyectos'
 import Tienda from './pages/Tienda'
+import Footer from './components/Footer';
           
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/Proyectos" element={<Proyectos/>}/>
         <Route path="/Tienda" element={<Tienda/>}/>
       </Routes>
+      <Footer/>
       </Router>
     </>
   );
