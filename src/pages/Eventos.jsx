@@ -2,7 +2,7 @@
 const Eventos = ()=>{
     return (
         <>
-        <p>eventos</p>
+        <h1 className="h-20 bg-black text-white">EVENTOS</h1>
         </>
     
     )

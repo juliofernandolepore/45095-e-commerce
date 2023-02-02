@@ -13,6 +13,8 @@ import Tienda from './pages/Tienda'
 import Footer from './components/Footer';
           
 function App() {
+/* ESTA ES UNA PAGINA QUE LE ESTOY REALIZANDO A MI ESPOSA A TRAVES DEL CURSO DE CODERHOUSE */
+
   return (
     <>   
       <Router>

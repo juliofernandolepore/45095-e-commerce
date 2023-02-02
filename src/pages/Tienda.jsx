@@ -1,7 +1,7 @@
 const Tienda= ()=>{
     return (
         <>
-        <h1>tienda</h1>
+        <h1 className="h-20 bg-red-400 text-blue">ACERCA</h1>
         </>
     
     )

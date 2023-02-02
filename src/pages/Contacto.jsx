@@ -2,7 +2,7 @@
 const Contacto = ()=>{
     return (
         <>
-        <p>contacto</p>
+        <h1 className="h-20 bg-red-400 text-white">CONTACTO</h1>
         </>
     
     )

@@ -2,8 +2,7 @@
 const Acerca = ()=>{
     return (
         <>
-        <h1>acerca de la persona de referencia</h1>
-        <p>acerca contenido</p>
+        <h1 className="h-20 bg-red-400 text-amber-900">ACERCA</h1>        
         </>
     
     )
