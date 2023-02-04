@@ -1,14 +1,14 @@
 /* CARRITO DE COMPRAS */
+import cart from "../images/cart.svg";
 
 const CardWidget = () => {
   return (
     <>
-    <div className="text-right">
-    <button class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-black py-2 px-4 border border-red-900 hover:border-transparent rounded">
-        CARRITO
-      </button>
-    </div>
-      
+      <div className="bg-green-600 w-14 m-1 p-1 rounded text-center">
+        <button type="button">
+          <img src={cart} alt={"compras en proceso"} width={30} />1
+        </button>
+      </div>
     </>
   );
 };

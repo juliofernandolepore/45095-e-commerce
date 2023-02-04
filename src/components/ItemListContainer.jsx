@@ -1,4 +1,4 @@
-const ItemlistContainer = ({saludo, items})=>{
+const ItemlistContainer = ({saludo, items, msj })=>{
     
     return(
         <>

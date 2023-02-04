@@ -18,10 +18,10 @@ function App() {
   return (
     
     <>   
-      <Router>
+      <Router>      
       <NavBar/>      
       <Routes>
-        <Route exact path="/" element={<Inicio/>}/>
+        <Route exact path="/" element={<Inicio />}/>
         <Route path='/Acerca' element={<Acerca/>}/>
         <Route path="/Contacto" element={<Contacto/>}/>
         <Route path="/Eventos" element={<Eventos/>}/>        
