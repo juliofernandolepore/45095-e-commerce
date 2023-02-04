@@ -1,6 +1,7 @@
 const Catalogo =()=> {
+    
   return (
-    <div>Catalogo</div>
+    <div><h1>catalogo</h1></div>
   )
 }
 

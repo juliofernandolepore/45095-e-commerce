@@ -16,6 +16,7 @@ function App() {
 /* ESTA ES UNA PAGINA QUE LE ESTOY REALIZANDO A MI ESPOSA A TRAVES DEL CURSO DE CODERHOUSE */
 
   return (
+    
     <>   
       <Router>
       <NavBar/>      

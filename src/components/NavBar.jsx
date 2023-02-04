@@ -86,8 +86,9 @@ const NavBar = () => {
           </div>
         </header>
       </div>
-      <ItemListContainer />
       <CardWidget />
+      <ItemListContainer saludo ="bienvenidos" items ="productos"/>
+      
     </>
   );
 };
