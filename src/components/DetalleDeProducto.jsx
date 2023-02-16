@@ -1,10 +1,6 @@
-
-
-const DetalleDeProducto =()=> {
+const DetalleDeProducto = () => {
   return (
-    <>
-    DetalleDeProducto
-    </>
+    <div>Detalle De Producto, cargas los elementos aqui</div>
   )
 }
 

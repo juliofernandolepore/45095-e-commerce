@@ -1,5 +1,4 @@
 import CardWidget from "./CardWidget";
-import ItemListContainer from "./ItemListContainer";
 import { useLocation, useNavigate } from "react-router";
 
 const NavBar = () => {
@@ -35,11 +34,11 @@ const NavBar = () => {
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/proyectos") && "text-black border-b-red-800"
+                  pathCoincidente("/Catalogo") && "text-black border-b-red-800"
                 }`}
-                onClick={() => navegacion("/proyectos")}
+                onClick={() => navegacion("/Catalogo")}
               >
-                Proyectos
+                Catalogo
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
@@ -87,7 +86,7 @@ const NavBar = () => {
         </header>
       </div>
       <CardWidget />
-      <ItemListContainer saludo ="bienvenidos" items ="productos" msj/>
+      
       
     </>
   );
