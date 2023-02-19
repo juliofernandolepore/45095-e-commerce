@@ -1,16 +1,17 @@
-import DetalleDeProducto from "../components/DetalleDeProducto"
+
 import ItemListContainer from "../components/ItemListContainer"
 
 const Catalogo = ()=>{
-    /* segun la rubrica de la pre-entrega 2 aqui deben cargarse 
-    los detalles de los productos */
+    /* segun la rubrica de la pre-entrega 2 aqui deben cargarse los productos */
+    /* el componente itemListContainer hace uso de useState y useEffect donde esta todo lo solicitado 
+    a la api, en sintesis este componente renderiza lo mas pesado */
 
-    /* CATALOGO ES EL COMPONENTE DONDE SE CARGAN LAS ACTIVIDADES DE LA PRE-ENTREGA, aunque 
-    por motivos organizacionales deberia ubicarse en la carpeta pages */
     return (
         <>
-        <h1 className="h-20 bg-violet-400 text-dart">CATALOGO</h1>
-        <DetalleDeProducto/>
+        <div className="bg-black text-white p-5">
+        <h1 className="text-center fw-bold">CATALOGO DE PRODUCTOS</h1>
+        </div>
+                
         <ItemListContainer/>
         </>
     

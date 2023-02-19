@@ -1,8 +1,13 @@
+
+
 const Tienda= ()=>{
     return (
         <>
-        <h1 className="h-20 bg-red-400 text-blue">ACERCA</h1>
-        </>
+        <div className="h-20 bg-red-400 text-blue text-center p-3">
+        <h1 className="h1 border-b-2">Tienda de productos</h1>
+        <h2 className="h2">Testeo de api </h2>
+        </div>     
+    </>
     
     )
 }
