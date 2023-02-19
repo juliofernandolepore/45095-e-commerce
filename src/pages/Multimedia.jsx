@@ -1,9 +1,12 @@
-
+import ParrafoEstilizado from "../styledComponents/Parrafo"
 
 const Multimedia = ()=>{
     return (
         <>
-        <h1 className="h-20 bg-green-400 text-amber-900">MULTIMEDIA</h1>
+        <ParrafoEstilizado>
+        <p>multimedia</p>
+        </ParrafoEstilizado>
+        
         </>
     
     )

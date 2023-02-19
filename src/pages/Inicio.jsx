@@ -1,4 +1,4 @@
-import Fetch from "../Ejercicios/Fetch"
+import Fetch from "../ejercicios/Fetch"
 
 const Inicio = () => {
 
