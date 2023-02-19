@@ -12,7 +12,10 @@ const ItemList = ({prod}) => {
 
   return (
     
-    prod.map(i => <Item i={i}/>)
+    prod.map(i => 
+    <div className='col-md-2 mb-5' key={i.id}>
+      <Item i={i}/>
+      </div>)
     
     
   )
