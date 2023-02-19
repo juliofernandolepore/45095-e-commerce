@@ -11,12 +11,10 @@ const ItemList = ({prod}) => {
    Item (hijo) el cual tiene por unica mision maquetar todos el contenido mapeado */
 
   return (
-    <>
-    <div>
-    {prod.map(item => <Item item={item}/>)}
-    </div>
     
-    </>
+    prod.map(i => <Item i={i}/>)
+    
+    
   )
 }
 
