@@ -1,4 +1,4 @@
-import CardWidget from "./CardWidget";
+import CardWidget from "../components/CardWidget";
 import { useLocation, useNavigate } from "react-router";
 
 const NavBar = () => {

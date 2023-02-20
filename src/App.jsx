@@ -1,15 +1,15 @@
 
 import './App.css';
-import NavBar from './components/NavBar'  
+import NavBar from './pages/NavBar'  
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Inicio from './pages/Inicio'
 import Acerca from './pages/Acerca'
 import Contacto from './pages/Contacto'
 import Eventos from './pages/Eventos'
 import Multimedia from './pages/Multimedia'
-import Catalogo from './components/Catalogo'
+import Catalogo from './pages/Catalogo'
 import Tienda from './pages/Tienda'
-import Footer from './components/Footer';
+import Footer from './pages/Footer';
 import ItemlistContainer from './components/ItemListContainer';
 import Item from "./components/Item"
           

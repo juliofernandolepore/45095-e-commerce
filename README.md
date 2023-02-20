@@ -1,21 +1,15 @@
-# proyecto coderhouse: 
-
+# proyecto coderhouse
 e-commerce
+PRE-ENTREGA 2
 
-*** PRE-ENTREGA 2
-
-# DOCENTE/PROFESOR: 
-
+# DOCENTE/PROFESOR 
 Javier Verón
 
-# Tutor Adjunto CoderAsk: 
-
+# Tutor Adjunto CoderAsk 
 Maximiliano Jose Tortosa
 
-# Tutor Regular CoderAsk: 
-
+# Tutor Regular CoderAsk
 Emanuel Acosta
 
-# Comisión:
-
+# Comisión
 45095

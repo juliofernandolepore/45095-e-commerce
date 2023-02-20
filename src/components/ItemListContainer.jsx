@@ -17,8 +17,6 @@ componente hijo al cual le hereda via props. */
 
     return (
         <>
-        {/* lo coloco aqui porque asi lo menciona la actividad aunque este componente
-        tambien es llamado dentro del componente tienda */}
         <ItemCount/>  
         <ItemList prod={prod}/>
         
