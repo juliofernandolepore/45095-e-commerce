@@ -1,4 +1,5 @@
 import ItemCount from "../components/ItemCount"
+//import ItemDetailContainer from "../components/ItemDetailContainer"
 
 const Tienda= ()=>{
     return (
@@ -8,7 +9,8 @@ const Tienda= ()=>{
         <h2 className="h2">Testeo de api </h2>
         
         </div>   
-        <ItemCount/>  
+        <ItemCount/>
+          
     </>
     
     )

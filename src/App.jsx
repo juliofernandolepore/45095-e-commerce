@@ -2,7 +2,7 @@
 import './App.css';
 import NavBar from './pages/NavBar'  
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Inicio from './pages/Inicio'
+import ItemDetailContainer from './components/ItemDetailContainer'
 import Acerca from './pages/Acerca'
 import Contacto from './pages/Contacto'
 import Eventos from './pages/Eventos'
@@ -14,13 +14,8 @@ import ItemlistContainer from './components/ItemListContainer';
 import Item from "./components/Item"
           
 function App() {
-/* ESTA ES UNA PAGINA QUE LE ESTOY REALIZANDO A MI ESPOSA A TRAVES DEL 
-CURSO DE CODERHOUSE */
-
-/* agregando rutas PRE-ENTREGA 2 */
-
-/* usar la funcion useParams para capturar variables generadas o 
-colocadas mediante URL */
+/* ESTA ES UNA PAGINA QUE LE ESTOY REALIZANDO A MI ESPOSA A TRAVES DEL CURSO DE CODERHOUSE */
+/* usar la funcion useParams para capturar variables generadas o colocadas mediante URL */
   return (    
     <>   
       <Router>      
@@ -29,7 +24,9 @@ colocadas mediante URL */
         <Route path='/list' element={<ItemlistContainer/>}/>
         <Route path='/list/:category' element={<ItemlistContainer/>}/>
         <Route path='/item/:id' element={<Item/>}/>
-        <Route exact path="/" element={<Inicio />}/>
+        <Route exact path="/" element={<ItemlistContainer />}/>
+        <Route path="/category/:id" element={<ItemlistContainer />}/>
+        <Route path ="/item/:id" element={<ItemDetailContainer />}/>
         <Route path='/Acerca' element={<Acerca/>}/>
         <Route path="/Contacto" element={<Contacto/>}/>
         <Route path="/Eventos" element={<Eventos/>}/>        

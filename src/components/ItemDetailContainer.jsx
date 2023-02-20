@@ -1,13 +1,13 @@
-import { useEffect } from "react"
 
 const ItemDetailContainer = () => {
+/* componente contenedor en el que actuan los hooks para 
+remitir al hijo (ItemDetail) */
 
-  useEffect(()=>{
 
-  },[])
+  
   return (
     <>
-    <ItemDetail  item={item} />
+    <h1>item detail container</h1>
     </>
   )
 }

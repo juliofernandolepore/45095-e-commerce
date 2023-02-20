@@ -1,11 +1,13 @@
 const ItemDetail =()=> {
-  /* aqui en item detail voy a recibir las props del componente item, proveniente 
+  /* aqui en item detail (DETALLES DEL ITEM), lo proveniente 
     del array */
+
+    
   return (
     <>
-    Detalle de item , parrafo de detalles
+    <h1>item detail</h1>    
     </>
   )
 }
 
-export default DetalleDeProducto
+export default ItemDetail
