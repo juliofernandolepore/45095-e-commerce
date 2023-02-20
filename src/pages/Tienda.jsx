@@ -1,4 +1,4 @@
-
+import ItemCount from "../components/ItemCount"
 
 const Tienda= ()=>{
     return (
@@ -6,7 +6,9 @@ const Tienda= ()=>{
         <div className="h-20 bg-red-400 text-blue text-center p-3">
         <h1 className="h1 border-b-2">Tienda de productos</h1>
         <h2 className="h2">Testeo de api </h2>
-        </div>     
+        
+        </div>   
+        <ItemCount/>  
     </>
     
     )

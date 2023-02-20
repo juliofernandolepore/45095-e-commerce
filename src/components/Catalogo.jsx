@@ -8,13 +8,14 @@ const Catalogo = ()=>{
 
     return (
         <>
-        <div className="bg-black text-white p-5">
-        <h1 className="text-center fw-bold">CATALOGO DE PRODUCTOS</h1>
-        </div>
-                
+        
+        <h1 className="text-center fw-bold bg-black text-white p-5">CATALOGO DE PRODUCTOS</h1>   
+        
+        
+        
+        
         <ItemListContainer/>
         </>
-    
     )
 }
 

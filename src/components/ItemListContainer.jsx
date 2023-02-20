@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import ItemList from './ItemList'
+import ItemCount from './ItemCount'
 
 const ItemlistContainer = ()=>{
 /* este es el componente contenedor que realiza las instrucciones mas pesadas del fetch, que importa un 
@@ -15,8 +16,12 @@ componente hijo al cual le hereda via props. */
       }, []);
 
     return (
-        <>    
+        <>
+        {/* lo coloco aqui porque asi lo menciona la actividad aunque este componente
+        tambien es llamado dentro del componente tienda */}
+        <ItemCount/>  
         <ItemList prod={prod}/>
+        
         </>
     )
 }

@@ -4,8 +4,11 @@ const Inicio = () => {
 
     return (
         <>
-        <h1 className="h-20 bg-yellow-400 text-black">INICIO</h1>
+        <div className="bg-yellow-400">
+        <h1 className="h-10  text-black text-center p-3">INICIO</h1>
         <Fetch/>
+        </div>
+        
         </>
     )
 } 
