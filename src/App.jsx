@@ -13,6 +13,7 @@ import Footer from './pages/Footer'
 import ItemlistContainer from './components/ItemListContainer'
 import Item from "./components/Item"
 import Inicio from "./pages/Inicio"
+import Carrito from "./components/Carrito"
           
 function App() {
 /* ESTA ES UNA PAGINA QUE LE ESTOY REALIZANDO A MI ESPOSA A TRAVES DEL CURSO DE CODERHOUSE */
@@ -35,6 +36,7 @@ function App() {
         <Route path="/Catalogo" element={<Catalogo/>}/>
         <Route path="/Tienda" element={<Tienda/>}/>
         <Route path="*" element={<Inicio/>}/>
+        <Route path="/carrito" element={<Carrito/>}/>
       </Routes>
       <Footer/>
       </Router>
