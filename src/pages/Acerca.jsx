@@ -2,7 +2,10 @@
 const Acerca = ()=>{
     return (
         <>
-        <h1 className="h-20 bg-red-400 text-amber-900">ACERCA</h1>        
+        <div className="p-5 bg-red-400">
+        <h1 className="h-20  text-amber-900 m-5 p-5">ACERCA</h1> 
+        </div>
+               
         </>
     
     )

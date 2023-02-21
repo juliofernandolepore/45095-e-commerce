@@ -20,8 +20,6 @@ modificando esclusivamente el componente donde estoy parado */
   `; */
   return (
     <>
-      <h1>algo para practicar styled components</h1>
-      <p>trabajando con parrafos</p>
       <Fetch/>
     </>
   );
