@@ -1,6 +1,6 @@
 # proyecto coderhouse
 e-commerce
-PRE-ENTREGA 2
+Proyecto Final React JS
 
 # DOCENTE/PROFESOR 
 Javier Verón
