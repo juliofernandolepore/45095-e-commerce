@@ -2,7 +2,7 @@
 
 /src/ejerciciosDeClase
 /src/.env
-.vscode
+/45095-e-commerce/.vscode
 # dependencies
 /node_modules
 /.pnp

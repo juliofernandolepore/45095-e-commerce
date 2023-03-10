@@ -19,7 +19,8 @@ function App() {
 /* ESTA ES UNA PAGINA QUE LE ESTOY REALIZANDO A MI ESPOSA A TRAVES DEL CURSO DE CODERHOUSE */
 /* usar la funcion useParams para capturar variables generadas o colocadas mediante URL */
   return (    
-    <>   
+    <> 
+    <cartContextProvider>  
       <Router>      
       <NavBar/>      
       <Routes>
@@ -29,6 +30,7 @@ function App() {
         <Route path="/" element={<Inicio/>}/>
         <Route path="/:id" element={<ItemlistContainer />}/>
         <Route path ="/producto/:id" element={<ItemDetailContainer />}/>
+        <Route path ="/cart" element={<Cart />}/>
         <Route path='/Acerca' element={<Acerca/>}/>
         <Route path="/Contacto" element={<Contacto/>}/>
         <Route path="/Eventos" element={<Eventos/>}/>        
@@ -40,6 +42,7 @@ function App() {
       </Routes>
       <Footer/>
       </Router>
+    </cartContextProvider>
     </>
   );
 }

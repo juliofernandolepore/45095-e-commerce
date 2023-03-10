@@ -38,8 +38,18 @@ const CartContextProvider = ({propiedadesContexto}) => {
     callback, si lo contiene o no(?) */
       return carrito.some( item=> item.id === itemId)
   }
+
+  /* funcion utilitaria para el widget carrito (mini) */
+
+  const totalWidget = ()=>{
+    return carrito.reduce((acumulador, item)=> acumulador += item.cantidad, 0)
+  }
+
+  const carTotal = ()=>{
+    return carrito.reduce((acumulador, item)=> acumulador += item.cantidad * item.precio, 0)
+  }
   return (
-    <CartContext.Provider value={{carrito, funcionAgregarItem, eliminarItem, borrarTodo}}>
+    <CartContext.Provider value={{carrito, funcionAgregarItem, eliminarItem, borrarTodo, totalWidget, carTotal}}>
       {propiedadesContexto}
     </CartContext.Provider>
     
