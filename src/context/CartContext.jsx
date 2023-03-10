@@ -24,7 +24,7 @@ const CartContextProvider = ({propiedadesContexto}) => {
       /* reeemplazo el contenido de carrito con el array generado en el
       filter, de todos los elementos disntintos el item seleccionado
       para eliminar, entonces devuelve un carrito sin el item que ya no deseo */
-      setCarrito([resultadoFiltrado])
+      setCarrito([...resultadoFiltrado]);
   }
 
   const borrarTodo =()=>{

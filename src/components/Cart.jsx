@@ -1,11 +1,12 @@
 import { useContext } from "react"
 import {CartContext} from "../context/CartContext"
-import basura from "./src/imagen/basura.svg"
+import basura from "../images/basura.svg"
+import {Link} from "react-router-dom"
 
 /* despliegue del contenido del carrito en detalle */
 
 const Cart = () => {
-  const {carrito, carTotal} = useContext(CartContext);
+  const {carrito, eliminarItem, carTotal} = useContext(CartContext);
 
   if(carTotal() === 0){
     return <div className="alert alert-warning text-center" role="alert">
@@ -53,7 +54,7 @@ const Cart = () => {
                 <tr>
                     <td colSpan={2}>&nbsp;</td>
                     <td className="text-center">Total a Pagar</td>
-                    <td className="text-center"><b>${totalWidget()}</b></td>
+                    <td className="text-center"><b>${carTotal()}</b></td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
