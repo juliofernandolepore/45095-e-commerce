@@ -3,9 +3,7 @@ import './App.css';
 import NavBar from './pages/NavBar'  
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer'
-import Acerca from './pages/Acerca'
-import Contacto from './pages/Contacto'
-import Eventos from './pages/Eventos'
+
 import Multimedia from './pages/Multimedia'
 import Catalogo from './pages/Catalogo'
 import Tienda from './pages/Tienda'
@@ -30,10 +28,7 @@ function App() {
         <Route path="/" element={<Inicio/>}/>
         <Route path="/:id" element={<ItemlistContainer />}/>
         <Route path ="/producto/:id" element={<ItemDetailContainer />}/>
-        <Route path ="/cart" element={<Cart />}/>
-        <Route path='/Acerca' element={<Acerca/>}/>
-        <Route path="/Contacto" element={<Contacto/>}/>
-        <Route path="/Eventos" element={<Eventos/>}/>        
+        <Route path ="/cart" element={<Cart />}/>                
         <Route path="/Multimedia" element={<Multimedia/>}/>
         <Route path="/Catalogo" element={<Catalogo/>}/>
         <Route path="/Tienda" element={<Tienda/>}/>
