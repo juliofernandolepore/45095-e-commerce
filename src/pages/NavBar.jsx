@@ -41,23 +41,6 @@ const NavBar = () => {
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/multimedia") &&
-                  "text-black border-b-red-800"
-                }`}
-                onClick={() => navegacion("/multimedia")}
-              >
-                Multimedia
-              </li>
-              <li
-                className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/eventos") && "text-black border-b-red-800"
-                }`}
-                onClick={() => navegacion("/eventos")}
-              >
-                Eventos
-              </li>
-              <li
-                className={`py-3 border-b-[3px] border-b-transparent ${
                   pathCoincidente("/tienda") && "text-black border-b-red-800"
                 }`}
                 onClick={() => navegacion("/tienda")}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import ItemList from './ItemList'
 import { useParams } from "react-router"
+import { collection, getDocs, getFirestore, query, where} from "firebase/firestore"
 //import ItemCount from './ItemCount'
 
 const ItemlistContainer = ()=>{
@@ -10,11 +11,15 @@ componente hijo al cual le hereda via props. */
     const {id} = useParams()
     
     useEffect(() => {
-        let variableBusqueda = id ? id : "hdd"
-        fetch("https://api.mercadolibre.com/sites/MLA/search?q=" + variableBusqueda + "&limit=18")
-        .then((r)=> r.json())
-        .then((r) => {
-            setProd(r.results);
+        /* creacion de coneccion */
+        const conexionDb = getFirestore();
+        /* conexion a la coleccion seleccionada */
+        const coleccionDeItems = collection(conexionDb, "items");
+        /* ahora tengo que añadir filtrado de productos (query) */
+        const consulta = id ? query(coleccionDeItems, where(categoria, "==", id) ) : coleccionDeItems
+        /* metodo para traer todos los elementos de una coleccion */
+        getDocs(consulta).then((e)=>{
+            setProd(e.docs.map(elemento =>({id:elemento.id, ...elemento.data()})))
         })
       }, [id]);
 

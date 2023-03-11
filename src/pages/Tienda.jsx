@@ -10,11 +10,8 @@ const Tienda= ()=>{
         </div>
         <div className="m-5 p-5">
         <ItemCount/>    
-        </div>   
-        
-          
-    </>
-    
+        </div> 
+        </>    
     )
 }
 

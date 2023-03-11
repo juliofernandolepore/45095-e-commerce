@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import ItemDetail from "./ItemDetail";
+import { getDoc, getFirestore , doc } from "firestore/firestore";
 
 const ItemDetailContainer = () => {
 /* componente contenedor en el que actuan los hooks para 
@@ -9,12 +10,16 @@ const [item, setItem] = useState({});
 const {id} = useParams();
 
 useEffect(()=>{
-  fetch("https://api.mercadolibre.com/items/" + id)
-  .then((r)=>r.json())
-  .then((datosObjeto)=>{
-    setItem(datosObjeto);
-  })
-},[id])
+
+  const conexionDb = getFirestore();
+  const documento = doc(conexionDb, "items", id);
+  /* esto es una promesa */
+  getDoc(documento, "items").then(e=>{
+    setItem({id:e.id, ...e.data()});
+  });
+  const doc = doc(coleccionDeItems, id)
+  
+},[id]);
   
   return (
     <ItemDetail item={item}/>

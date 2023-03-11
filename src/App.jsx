@@ -4,7 +4,6 @@ import NavBar from './pages/NavBar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Cart from './components/Cart'
-import Multimedia from './pages/Multimedia'
 import Catalogo from './pages/Catalogo'
 import Tienda from './pages/Tienda'
 import Footer from './pages/Footer'
@@ -14,8 +13,6 @@ import Inicio from "./pages/Inicio"
 import Carrito from "./components/Carrito"
           
 function App() {
-/* ESTA ES UNA PAGINA QUE LE ESTOY REALIZANDO A MI ESPOSA A TRAVES DEL CURSO DE CODERHOUSE */
-/* usar la funcion useParams para capturar variables generadas o colocadas mediante URL */
   return (    
     <> 
     <cartContextProvider>  
@@ -28,8 +25,7 @@ function App() {
         <Route path="/" element={<Inicio/>}/>
         <Route path="/:id" element={<ItemlistContainer />}/>
         <Route path ="/producto/:id" element={<ItemDetailContainer />}/>
-        <Route path ="/cart" element={<Cart />}/>                
-        <Route path="/Multimedia" element={<Multimedia/>}/>
+        <Route path ="/cart" element={<Cart />}/>              
         <Route path="/Catalogo" element={<Catalogo/>}/>
         <Route path="/Tienda" element={<Tienda/>}/>
         <Route path="/inicio" element={<Inicio/>}/>

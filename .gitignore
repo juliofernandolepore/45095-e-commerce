@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-/src/ejerciciosDeClase
+
 /src/.env
 /45095-e-commerce/.vscode
 # dependencies

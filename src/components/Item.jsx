@@ -7,7 +7,6 @@ const Item = ({ i }) => {
 
 /* el atributo permalink traido en el arreglo devuelto en la api permite redireccion al producto en cuestion */    
   return (
-    <>
     <Link to={"/producto/" + i.id}>
       <div className="m-3 p-5 border border-5 text-start">
           <img src={i.thumbnail} className="card-img-top" alt={i.title} />
@@ -19,7 +18,6 @@ const Item = ({ i }) => {
           </div>
       </div>
       </Link>
-    </>
   );
 };
 
