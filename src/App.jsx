@@ -10,7 +10,6 @@ import Footer from './pages/Footer'
 import ItemlistContainer from './components/ItemListContainer'
 import Item from "./components/Item"
 import Inicio from "./pages/Inicio"
-import Carrito from "./components/Carrito"
           
 function App() {
   return (    
@@ -29,7 +28,6 @@ function App() {
         <Route path="/Catalogo" element={<Catalogo/>}/>
         <Route path="/Tienda" element={<Tienda/>}/>
         <Route path="/inicio" element={<Inicio/>}/>
-        <Route path="/carrito" element={<Carrito/>}/>
       </Routes>
       <Footer/>
       </Router>

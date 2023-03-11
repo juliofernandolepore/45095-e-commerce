@@ -1,12 +1,31 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import {CartContext} from "../context/CartContext"
 import basura from "../images/basura.svg"
 import {Link} from "react-router-dom"
+import { getFirestore , collection, addDoc } from "firestore/firestore";
 
 /* despliegue del contenido del carrito en detalle */
 
 const Cart = () => {
-  const {carrito, eliminarItem, carTotal} = useContext(CartContext);
+  /* declaro las variables para almacenar los values capturados del input y los trabajo con un hook */
+  const [nombre, setNombre] = useState("");
+  const [correo, setCorreo] = useState("");
+  const [telefono, setTelefono] = useState(""); 
+  const [ordenId, setOrdenId] = useState("");
+  const {carrito, eliminarItem, borrarTodo, carTotal} = useContext(CartContext);
+    /* funcion para crear objetos con las constantes generadas en los hooks */
+  const generarOrden = ()=>{
+    const comprador = {nombre:nombre, correo:correo, telefono:telefono}
+    const fecha = new Date();
+    const fechaDeCompra =  `${fecha.getHours()} ${fecha.getMinutes()} ${fecha.getSeconds()} ${fecha.getDay()} ${fecha.getMonth + 1} ${fecha.getFullYear()}` 
+    const orden = {comprador:comprador, items:carrito, fecha:fechaDeCompra, total:carTotal()};
+    /* conexion a la base de datos a la coleccion ordenes */
+    const conexionDb = getFirestore();
+    const coleccionDeOrdenes = collection(conexionDb, "ordenes");
+    addDoc(coleccionDeOrdenes, orden).then(data => {
+            setOrdenId(data.id)
+    });
+  }
 
   if(carTotal() === 0){
     return <div className="alert alert-warning text-center" role="alert">
@@ -26,7 +45,7 @@ const Cart = () => {
                 </div>
                 <div class="mb-3">
                     <label htmlFor="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" onInput={(e) => {setEmail(e.target.value)}} />
+                    <input type="text" class="form-control" id="email" onInput={(e) => {setCorreo(e.target.value)}} />
                 </div>
                 <div class="mb-3">
                     <label htmlFor="telefono" class="form-label">Teléfono</label>
@@ -47,7 +66,9 @@ const Cart = () => {
                             <td className="text-start align-middle" width="40%">{item.nombre}</td>
                             <td className="text-center align-middle" width="20%">{item.cantidad} x ${item.precio}</td>
                             <td className="text-center align-middle" width="20%">${item.cantidad * item.precio}</td>
-                            <td className="text-end align-middle" width="10%"><button type="button" className="btn btn-warning bg-warning" onClick={() => {eliminarItem(item.id)}} title={"Eliminar Item"}><img src={basura} alt={"Eliminar Producto"} width={32} /></button></td>
+                            <td className="text-end align-middle" width="10%"><button type="button" className="btn btn-warning bg-warning" 
+                            onClick={() => {eliminarItem(item.id)}} title={"Eliminar Item"}>
+                            <img src={basura} alt={"Eliminar Producto"} width={32} /></button></td>
                         </tr>
                     ))
                 }
@@ -62,7 +83,7 @@ const Cart = () => {
     </div>
     <div className="row my-3">
         <div className="col-md-12">
-            {orderId ? <div class="alert alert-warning text-center" role="alert"><h3>Gracias por tu Compra!</h3><p>Se generó una Orden de Compra con el ID: <b>{orderId}</b></p></div> : ""}
+            {ordenId ? <div class="alert alert-warning text-center" role="alert"><h3>Gracias por tu Compra!</h3><p>Se generó una Orden de Compra con el ID: <b>{ordenId}</b></p></div> : ""}
         </div>
     </div>
 </div>
