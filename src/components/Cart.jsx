@@ -12,13 +12,13 @@ const Cart = () => {
   const [correo, setCorreo] = useState("");
   const [telefono, setTelefono] = useState(""); 
   const [ordenId, setOrdenId] = useState("");
-  const {carrito, eliminarItem, borrarTodo, carTotal} = useContext(CartContext);
+  const {carrito, eliminarItem, borrarTodo, cartTotal, cartSum} = useContext(CartContext);
     /* funcion para crear objetos con las constantes generadas en los hooks */
   const generarOrden = ()=>{
     const comprador = {nombre:nombre, correo:correo, telefono:telefono}
     const fecha = new Date();
-    const fechaDeCompra =  `${fecha.getHours()} ${fecha.getMinutes()} ${fecha.getSeconds()} ${fecha.getDay()} ${fecha.getMonth + 1} ${fecha.getFullYear()}` 
-    const orden = {comprador:comprador, items:carrito, fecha:fechaDeCompra, total:carTotal()};
+    const fechaDeCompra =  `${fecha.getHours()} ${fecha.getMinutes()} ${fecha.getSeconds()} ${fecha.getDay()} ${fecha.getMonth() + 1} ${fecha.getFullYear()}` 
+    const orden = {comprador:comprador, items:{carrito}, fecha:fechaDeCompra, total:cartSum()};
     /* conexion a la base de datos a la coleccion ordenes */
     const conexionDb = getFirestore();
     const coleccionDeOrdenes = collection(conexionDb, "ordenes");

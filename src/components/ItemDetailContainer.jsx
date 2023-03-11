@@ -1,28 +1,32 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router"
+import { doc, getDoc, getFirestore } from "firestore/firestore";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import ItemDetail from "./ItemDetail";
-import { getDoc, getFirestore , doc } from "firestore/firestore";
+import Spinner from "./Spinner";
 
 const ItemDetailContainer = () => {
 /* componente contenedor en el que actuan los hooks para 
 remitir al hijo (ItemDetail) */
+const [cargando, setCargando] = useState(true);
 const [item, setItem] = useState({});
 const {id} = useParams();
 
 useEffect(()=>{
 
-  const conexionDb = getFirestore();
-  const documento = doc(conexionDb, "items", id);
+  const db = getFirestore();
+  const document = doc(db, "items", id);
   /* esto es una promesa */
-  getDoc(documento, "items").then(e=>{
+  getDoc(document).then(e=>{
     setItem({id:e.id, ...e.data()});
-  });
-  const doc = doc(coleccionDeItems, id)
-  
+    setCargando(false);
+  });    
 },[id]);
   
   return (
-    <ItemDetail item={item}/>
+    <>
+    {cargando ? <Spinner/> : <ItemDetail item={item}/>}
+    </>
+    
   )
 }
 
