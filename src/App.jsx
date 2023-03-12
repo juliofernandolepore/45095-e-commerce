@@ -10,6 +10,8 @@ import Footer from './pages/Footer'
 import ItemlistContainer from './components/ItemListContainer'
 import Item from "./components/Item"
 import Inicio from "./pages/Inicio"
+import Checkout from './components/checkout';
+import GraciasAviso from './components/GraciasAviso';
           
 function App() {
   return (    
@@ -28,6 +30,8 @@ function App() {
         <Route path="/Catalogo" element={<Catalogo/>}/>
         <Route path="/Tienda" element={<Tienda/>}/>
         <Route path="/inicio" element={<Inicio/>}/>
+        <Route path ="/checkout" element={<Checkout />}/>
+        <Route path ="/gracias/:orderId" element={<GraciasAviso />}/>
       </Routes>
       <Footer/>
       </Router>
