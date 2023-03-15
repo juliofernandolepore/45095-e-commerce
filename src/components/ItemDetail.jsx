@@ -1,9 +1,7 @@
-import { createContext, useContext } from "react"
-import ItemCount from "./ItemCount"
+import { createContext, useContext } from "react";
+import ItemCount from "./ItemCount";
 
 const ItemDetail =({item})=> {
-  /* aqui en ItemDetail (DETALLES DEL ITEM), lo proveniente del array,
-  y tambien se hace uso del contexto (funciones) a traves del hook useContext */
   const {funcionAgregarItem} = useContext(CartContext) 
 
   const agregar = (cantidad) =>{

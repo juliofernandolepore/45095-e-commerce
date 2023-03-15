@@ -3,8 +3,7 @@ import {Link} from "react-router-dom";
 
 const ItemCount = ({stock, agregar}) => {
   const {items, setItems} = useState (1);
-  const {itemStock, setItemStock} = useState(stock)
-  /* estado para conditional render del boton agregar | finalizar compra */
+  const {itemStock, setItemStock} = useState(stock)  
   const {itemAgregado, setItemAgregado} = useState(false)
 
   const funcionIncrementarStock = ()=>{

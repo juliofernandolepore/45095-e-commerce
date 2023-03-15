@@ -1,4 +1,3 @@
-/* CARRITO DE COMPRAS (widget) */
 import { Link } from "react-router-dom";
 import cart from "../images/cart.svg";
 import { useContext } from "react";

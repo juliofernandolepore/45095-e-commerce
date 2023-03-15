@@ -5,8 +5,6 @@ import ItemDetail from "./ItemDetail";
 import Spinner from "./Spinner";
 
 const ItemDetailContainer = () => {
-/* componente contenedor en el que actuan los hooks para 
-remitir al hijo (ItemDetail) */
 const [cargando, setCargando] = useState(true);
 const [item, setItem] = useState({});
 const {id} = useParams();
@@ -14,8 +12,7 @@ const {id} = useParams();
 useEffect(()=>{
 
   const db = getFirestore();
-  const document = doc(db, "items", id);
-  /* esto es una promesa */
+  const document = doc(db, "items", id);  
   getDoc(document).then(e=>{
     setItem({id:e.id, ...e.data()});
     setCargando(false);

@@ -18,8 +18,6 @@ const Checkout = () => {
         const fechaDeCompra =  `${fecha.getHours()} ${fecha.getMinutes()} ${fecha.getSeconds()} ${fecha.getDay()} ${fecha.getMonth() + 1} ${fecha.getFullYear()}` 
         const orden = {comprador:comprador, items:{carrito}, fecha:fechaDeCompra, total:cartSum()};
 
-        /* agregando validacion rapida de formulario (campos requeridos) */
-
         if (nombre.length === 0){
             swal("Atencion!", "debes ingresar tu nombre!", "warning")
             return false;
