@@ -3,7 +3,6 @@ import ItemList from './ItemList'
 import { useParams } from "react-router"
 import { collection, getDocs, getFirestore, query, where} from "firebase/firestore"
 import Spinner from "./Spinner"
-//import ItemCount from './ItemCount'
 
 const ItemlistContainer = ()=>{
 /* este es el componente contenedor que realiza las instrucciones mas pesadas del fetch, que importa un 

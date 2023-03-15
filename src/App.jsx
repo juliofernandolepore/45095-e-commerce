@@ -1,18 +1,16 @@
 
 import './App.css';
-import NavBar from './pages/NavBar'  
+import NavBar from './pages/NavBar' ; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ItemDetailContainer from './components/ItemDetailContainer'
-import Cart from './components/Cart'
-import Catalogo from './pages/Catalogo'
-import Tienda from './pages/Tienda'
-import Footer from './pages/Footer'
-import ItemlistContainer from './components/ItemListContainer'
-import Item from "./components/Item"
-import Inicio from "./pages/Inicio"
-import Checkout from './components/checkout';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import Cart from './components/Cart';
+import Tienda from './pages/Tienda';
+import Footer from './pages/Footer';
+import ItemlistContainer from './components/ItemListContainer';
+import Inicio from "./pages/Inicio";
+import Checkout from './components/Checkout';
 import GraciasAviso from './components/GraciasAviso';
-          
+import NotFound from "./components/NotFound";         
 function App() {
   return (    
     <> 
@@ -20,18 +18,15 @@ function App() {
       <Router>      
       <NavBar/>      
       <Routes>
-        <Route path='/list' element={<ItemlistContainer/>}/>
-        <Route path='/list/:category' element={<ItemlistContainer/>}/>
-        <Route path='/item/:id' element={<Item/>}/>
-        <Route path="/" element={<Inicio/>}/>
-        <Route path="/:id" element={<ItemlistContainer />}/>
-        <Route path ="/producto/:id" element={<ItemDetailContainer />}/>
-        <Route path ="/cart" element={<Cart />}/>              
-        <Route path="/Catalogo" element={<Catalogo/>}/>
-        <Route path="/Tienda" element={<Tienda/>}/>
-        <Route path="/inicio" element={<Inicio/>}/>
-        <Route path ="/checkout" element={<Checkout />}/>
+        <Route path="/" element={<ItemlistContainer/>}/>
+        <Route path="/inicio" element={<Inicio/>}/>        
+        <Route path='/category/:id' element={<ItemlistContainer/>}/>
+        <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+        <Route path ="/cart" element={<Cart />}/>
+        <Route path ="/checkout" element={<Checkout />}/>                        
+        <Route path="/Tienda" element={<Tienda/>}/>       
         <Route path ="/gracias/:orderId" element={<GraciasAviso />}/>
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
       <Footer/>
       </Router>

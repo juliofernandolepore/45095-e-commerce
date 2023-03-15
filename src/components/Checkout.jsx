@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import {CartContext} from "../context/CartContext"
-import { getFirestore , collection, addDoc } from "firestore/firestore";
+import { getFirestore , collection, addDoc } from "firebase/firestore";
+import { Navigate } from "react-router";
 
 const Checkout = () => {  
       
