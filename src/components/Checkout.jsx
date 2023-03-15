@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import {CartContext} from "../context/CartContext"
 import { getFirestore , collection, addDoc } from "firebase/firestore";
 import { Navigate } from "react-router";
+import swal from 'sweetalert';
 
 const Checkout = () => {  
       
@@ -39,9 +40,7 @@ const Checkout = () => {
         addDoc(coleccionDeOrdenes, orden).then(data => {
                 setOrdenId(data.id)
                 borrarTodo();
-        });
-
-        return orderId? <Navigate to={"/gracias/" + orderId }/> : "";
+        });        
 
       }
         
@@ -88,7 +87,8 @@ const Checkout = () => {
                     </tr>
                 </table>
             </div>
-        </div>        
+        </div>
+        {orderId? <Navigate to={"/gracias/" + orderId }/> : ""}      
     </div>
     )
     }
