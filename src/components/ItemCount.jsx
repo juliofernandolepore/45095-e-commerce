@@ -3,8 +3,8 @@ import {Link} from "react-router-dom";
 
 const ItemCount = ({stock, agregar}) => {
   const {items, setItems} = useState (1);
-  const {itemStock, setItemStock} = useState(stock)  
-  const {itemAgregado, setItemAgregado} = useState(false)
+  const {itemStock, setItemStock} = useState(stock);  
+  const {itemAgregado, setItemAgregado} = useState(false);
 
   const funcionIncrementarStock = ()=>{
     if (items < itemStock){
@@ -19,15 +19,16 @@ const ItemCount = ({stock, agregar}) => {
 
   const addToCart = () => {
     if(itemStock >= items){
-      setItemStock(itemStock - items)
-      setItems(1)
-      setItemAgregado(true)
-      agregar(items)
+      setItemStock(itemStock - items);
+      setItems(1);
+      setItemAgregado(true);
+      agregar(items);
     }
   }
   useEffect(()=>{
-    setItemStock(stock)
-  }, [stock])
+    setItemStock(stock);
+  }, [stock]);
+
   return (
     <div className="container">
       <div className="row my-2">
@@ -42,7 +43,7 @@ const ItemCount = ({stock, agregar}) => {
       <div className="row my-2">
         <div className="col">
           <div className="btn-group">
-              {itemAgregado ? <Link to={"/carrito"} className="btn btn-warning">finalizar compra</Link> :
+              {itemAgregado ? <Link to={"/cart"} className="btn btn-warning">finalizar compra</Link> :
               <button className="btn btn-warning" onClick={addToCart}>agregar a carrito</button>}
           </div>
         </div>

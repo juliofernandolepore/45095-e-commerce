@@ -10,10 +10,9 @@ const [item, setItem] = useState({});
 const {id} = useParams();
 
 useEffect(()=>{
-
-  const db = getFirestore();
-  const document = doc(db, "items", id);  
-  getDoc(document).then(e=>{
+  const conexionDb = getFirestore();
+  const documento = doc(conexionDb, "items", id);  
+  getDoc(documento).then(e=>{
     setItem({id:e.id, ...e.data()});
     setCargando(false);
   });    

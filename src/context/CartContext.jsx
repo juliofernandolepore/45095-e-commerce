@@ -3,7 +3,7 @@ export const CartContext = createContext()
 
 const CartContextProvider = ({propiedadesContexto}) => {
   const {carrito, setCarrito} = useState([]);
-  const funcionAgregarItem = (item, cantidad) =>{
+  const agregarItem = (item, cantidad) =>{
     if(verificacionSiEstaEnCarrito(item.itemId)){
       let posicion = carrito.findIndex(e => e.id === item.id)      
       carrito[posicion].cantidad += cantidad;
@@ -18,12 +18,11 @@ const CartContextProvider = ({propiedadesContexto}) => {
       setCarrito([...resultadoFiltrado]);
   }
 
-  const borrarTodo =()=>{    
+  const limpiar =()=>{    
     setCarrito([]);
   }
   
-  const verificacionSiEstaEnCarrito = (itemId) => {
-    
+  const verificacionSiEstaEnCarrito = (itemId) => {    
       return carrito.some( item=> item.id === itemId)
   }  
 
@@ -31,11 +30,17 @@ const CartContextProvider = ({propiedadesContexto}) => {
     return carrito.reduce((acumulador, item)=> acumulador += item.cantidad, 0)
   }
 
-  const carTotal = ()=>{
+  const carritoTotal = ()=>{
     return carrito.reduce((acumulador, item)=> acumulador += item.cantidad * item.precio, 0)
   }
+
+  const carritotSuma = ()=>{
+    return carrito.reduce((acumulador, item ) => acumulador += item.cantidad * item.precio, 0)
+
+  }
+
   return (
-    <CartContext.Provider value={{carrito, funcionAgregarItem, eliminarItem, borrarTodo, totalWidget, carTotal}}>
+    <CartContext.Provider value={{carrito, agregarItem, eliminarItem, limpiar, totalWidget, carritoTotal, carritotSuma}}>
       {propiedadesContexto}
     </CartContext.Provider>    
   )

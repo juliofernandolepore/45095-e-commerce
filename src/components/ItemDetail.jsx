@@ -1,14 +1,14 @@
-import { createContext, useContext } from "react";
+import { useContext } from "react";
 import ItemCount from "./ItemCount";
+import { CartContext } from "../context/CartContext";
 
 const ItemDetail =({item})=> {
-  const {funcionAgregarItem} = useContext(CartContext) 
+  const {agregarItem} = useContext(CartContext) 
 
   const agregar = (cantidad) =>{
-    funcionAgregarItem(item, cantidad)
+    agregarItem(item, cantidad)
   }
   return (
-    <>
     <div className="container">
       <div className="row">
         <div className="col">
@@ -24,7 +24,6 @@ const ItemDetail =({item})=> {
         </div>
       </div>
       </div>    
-    </>
   )
 }
 

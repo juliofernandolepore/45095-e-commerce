@@ -12,9 +12,9 @@ const ItemlistContainer = ()=>{
     useEffect(() => {
         const conexionDb = getFirestore();
         const coleccionDeItems = collection(conexionDb, "items");
-        const consulta = id ? query(coleccionDeItems, where(categoria, "==", id) ) : coleccionDeItems
+        const consulta = id ? query(coleccionDeItems, where("categoria", "==", id) ) : coleccionDeItems
         getDocs(consulta).then((e)=>{
-            setProd(e.docs.map(elemento =>({id:elemento.id, ...elemento.data()})))
+            setProd(e.docs.map(elemento =>({id:elemento.id, ...elemento.data()}))) 
             setCargando(false);
         })
       }, [id]);
