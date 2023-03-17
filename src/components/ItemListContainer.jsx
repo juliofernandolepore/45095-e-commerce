@@ -8,7 +8,7 @@ const ItemlistContainer = ()=>{
     const [prod, setProd] = useState([])
     const [cargando, setCargando] = useState(true);
     const {id} = useParams()
-    
+       
     useEffect(() => {
         const conexionDb = getFirestore();
         const coleccionDeItems = collection(conexionDb, "items");

@@ -1,5 +1,3 @@
-import ItemCount from "../components/ItemCount"
-//import ItemDetailContainer from "../components/ItemDetailContainer"
 
 const Tienda= ()=>{
     return (
@@ -9,7 +7,6 @@ const Tienda= ()=>{
         <h2 className="h2 m-5 p-5">Testeo de api </h2>        
         </div>
         <div className="m-5 p-5">
-        <ItemCount/>    
         </div> 
         </>    
     )
