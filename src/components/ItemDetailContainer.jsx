@@ -1,4 +1,5 @@
-import { doc, getDoc, getFirestore } from "firebase/firestore";
+import {db} from "../firebase/index";
+import { doc, getDoc} from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ItemDetail from "./ItemDetail";
@@ -9,9 +10,8 @@ const [cargando, setCargando] = useState(true);
 const [item, setItem] = useState({});
 const {id} = useParams();
 
-useEffect(()=>{
-  const conexionDb = getFirestore();
-  const documento = doc(conexionDb, "items", id);  
+useEffect(()=>{  
+  const documento = doc(db, "items", id);  
   getDoc(documento).then(e=>{
     setItem({id:e.id, ...e.data()});
     setCargando(false);

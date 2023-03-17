@@ -1,6 +1,7 @@
+import {db} from "../firebase/index";
 import { useContext, useState } from "react"
 import {CartContext} from "../context/CartContext"
-import { getFirestore , collection, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { Navigate } from "react-router";
 import swal from 'sweetalert';
 
@@ -33,8 +34,7 @@ const Checkout = () => {
             return false;
         }
         
-        const conexionDb = getFirestore();
-        const coleccionDeOrdenes = collection(conexionDb, "ordenes");
+        const coleccionDeOrdenes = collection(db, "ordenes");
         addDoc(coleccionDeOrdenes, orden).then(data => {
                 setOrdenId(data.id)
                 limpiar();

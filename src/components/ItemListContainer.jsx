@@ -1,7 +1,8 @@
+import { db } from "../firebase/index";
 import { useEffect, useState } from "react"
 import ItemList from './ItemList'
 import { useParams } from "react-router"
-import { collection, getDocs, getFirestore, query, where} from "firebase/firestore"
+import { collection, getDocs, query, where} from "firebase/firestore"
 import Spinner from "./Spinner"
 
 const ItemlistContainer = ()=>{
@@ -9,9 +10,8 @@ const ItemlistContainer = ()=>{
     const [cargando, setCargando] = useState(true);
     const {id} = useParams()
        
-    useEffect(() => {
-        const conexionDb = getFirestore();
-        const coleccionDeItems = collection(conexionDb, "items");
+    useEffect(() => {        
+        const coleccionDeItems = collection(db, "items");
         const consulta = id ? query(coleccionDeItems, where("categoria", "==", id) ) : coleccionDeItems
         getDocs(consulta).then((e)=>{
             setProd(e.docs.map(elemento =>({id:elemento.id, ...elemento.data()}))) 
