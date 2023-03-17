@@ -48,19 +48,19 @@ const Checkout = () => {
             <h1 className="text-center">Finalizar el proceso de compra </h1>
             <div className="col-md-3">
                 <form>
-                    <div class="mb-3">
-                        <label htmlFor="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" onInput={(e) => {setNombre(e.target.value)}} />
+                    <div className="mb-3">
+                        <label htmlFor="nombre" className="form-label">Nombre</label>
+                        <input type="text" className="form-control" id="nombre" onInput={(e) => {setNombre(e.target.value)}} />
                     </div>
-                    <div class="mb-3">
-                        <label htmlFor="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="email" onInput={(e) => {setCorreo(e.target.value)}} />
+                    <div className="mb-3">
+                        <label htmlFor="email" className="form-label">Email</label>
+                        <input type="text" className="form-control" id="email" onInput={(e) => {setCorreo(e.target.value)}} />
                     </div>
-                    <div class="mb-3">
-                        <label htmlFor="telefono" class="form-label">Teléfono</label>
-                        <input type="text" class="form-control" id="telefono" onInput={(e) => {setTelefono(e.target.value)}} />
+                    <div className="mb-3">
+                        <label htmlFor="telefono" className="form-label">Teléfono</label>
+                        <input type="text" className="form-control" id="telefono" onInput={(e) => {setTelefono(e.target.value)}} />
                     </div>
-                    <button type="button" class="btn btn-warning" onClick={generarOrden}>Generar Orden</button>
+                    <button type="button" className="btn btn-warning" onClick={generarOrden}>Generar Orden</button>
                 </form>
             </div>
             <div className="col-md-9">

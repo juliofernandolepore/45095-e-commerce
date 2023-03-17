@@ -3,10 +3,10 @@ import ItemCount from "./ItemCount";
 import { CartContext } from "../context/CartContext";
 
 const ItemDetail =({item})=> {
-  const {agregarItem} = useContext(CartContext) 
+  const {addItem} = useContext(CartContext) 
 
-  const agregar = (cantidad) =>{
-    agregarItem(item, cantidad)
+  const onAdd = (quantity) =>{
+    addItem(item, quantity);
   }
   return (
     <div className="container">
@@ -20,7 +20,7 @@ const ItemDetail =({item})=> {
         <div className="col">
           <h1>{item.title}</h1>
           <p>{item.price}</p>
-          <ItemCount stock={item.stock} agregar={agregar}/>
+          <ItemCount stock={item.stock} onAdd={onAdd}/>
         </div>
       </div>
       </div>    

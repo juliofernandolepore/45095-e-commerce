@@ -1,47 +1,50 @@
 import { createContext, useState } from "react"
 export const CartContext = createContext()
 
-const CartContextProvider = ({propiedadesContexto}) => {
-  const {carrito, setCarrito} = useState([]);
-  const agregarItem = (item, cantidad) =>{
-    if(verificacionSiEstaEnCarrito(item.itemId)){
-      let posicion = carrito.findIndex(e => e.id === item.id)      
-      carrito[posicion].cantidad += cantidad;
-      setCarrito([...carrito])
+const CartContextProvider = ({props}) => {
+
+  const {cart, setCart} = useState([]);
+
+  const addItem = (item, quantity) =>{
+
+    if(existencia(item.itemId)){
+      let posicion = cart.findIndex(e => e.id === item.id)      
+      cart[posicion].quantity += quantity;
+      setCart([...cart])
     }else{      
-      setCarrito([...carrito, {...item, cantidad:cantidad}])
+      setCart([...cart, {...item, quantity:quantity}])
     }
   }
 
-  const eliminarItem = (itemId) =>{
-     const resultadoFiltrado = carrito.filter(item=>item.id !== itemId)      
-      setCarrito([...resultadoFiltrado]);
+  const removeItem = (itemId) =>{
+     const filtrado = cart.filter(item=>item.id !== itemId);      
+      setCart([...filtrado]);
   }
 
   const limpiar =()=>{    
-    setCarrito([]);
+    setCart([]);
   }
   
-  const verificacionSiEstaEnCarrito = (itemId) => {    
-      return carrito.some( item=> item.id === itemId)
+  const existencia = (itemId) => {    
+      return cart.some(item=> item.id === itemId)
   }  
 
   const totalWidget = ()=>{
-    return carrito.reduce((acumulador, item)=> acumulador += item.cantidad, 0)
+    return cart.reduce((acc, item)=> acc += item.quantity, 0)
   }
 
-  const carritoTotal = ()=>{
-    return carrito.reduce((acumulador, item)=> acumulador += item.cantidad * item.precio, 0)
+  const cartTotal = ()=>{
+    return cart.reduce((acc, item)=> acc += item.quantity * item.price, 0)
   }
 
-  const carritotSuma = ()=>{
-    return carrito.reduce((acumulador, item ) => acumulador += item.cantidad * item.precio, 0)
+  const cartSum = ()=>{
+    return cart.reduce((acc, item ) => acc += item.quantity * item.price, 0)
 
   }
 
   return (
-    <CartContext.Provider value={{carrito, agregarItem, eliminarItem, limpiar, totalWidget, carritoTotal, carritotSuma}}>
-      {propiedadesContexto}
+    <CartContext.Provider value={{cart, addItem, removeItem, limpiar, totalWidget, cartTotal, cartSum}}>
+      {props}
     </CartContext.Provider>    
   )
 }

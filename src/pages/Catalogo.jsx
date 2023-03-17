@@ -1,10 +1,7 @@
 
 import ItemListContainer from "../components/ItemListContainer"
 
-const Catalogo = ()=>{
-    /* segun la rubrica de la pre-entrega 2 aqui deben cargarse los productos */
-    /* el componente itemListContainer hace uso de useState y useEffect donde esta todo lo solicitado 
-    a la api, en sintesis este componente renderiza lo mas pesado */
+const Catalogo = ()=>{    
 
     return (
         <>        

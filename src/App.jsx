@@ -11,8 +11,7 @@ import Checkout from './components/Checkout';
 import GraciasAviso from './components/GraciasAviso';
 import NotFound from "./components/NotFound";         
 function App() {
-  return (    
-    <> 
+  return (     
     <cartContextProvider>  
       <Router>      
       <NavBar/>      
@@ -30,7 +29,6 @@ function App() {
       <Footer/>
       </Router>
     </cartContextProvider>
-    </>
   );
 }
 

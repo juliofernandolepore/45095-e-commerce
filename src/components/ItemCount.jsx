@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 
-const ItemCount = ({stock, agregar}) => {
+const ItemCount = ({stock, onAdd}) => {
   const {items, setItems} = useState (1);
   const {itemStock, setItemStock} = useState(stock);  
   const {itemAgregado, setItemAgregado} = useState(false);
@@ -22,7 +22,7 @@ const ItemCount = ({stock, agregar}) => {
       setItemStock(itemStock - items);
       setItems(1);
       setItemAgregado(true);
-      agregar(items);
+      onAdd(items);
     }
   }
   useEffect(()=>{
@@ -43,7 +43,7 @@ const ItemCount = ({stock, agregar}) => {
       <div className="row my-2">
         <div className="col">
           <div className="btn-group">
-              {itemAgregado ? <Link to={"/cart"} className="btn btn-warning">finalizar compra</Link> :
+              {itemAgregado ? <Link to={"/cart"} className="btn btn-warning">finalizar la compra</Link> :
               <button className="btn btn-warning" onClick={addToCart}>agregar a carrito</button>}
           </div>
         </div>
