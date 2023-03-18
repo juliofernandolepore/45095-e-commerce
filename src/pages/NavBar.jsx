@@ -44,13 +44,13 @@ const NavBar = () => {
                 onClick={() => navegacion("/tienda")}
               >
                 Tienda
-              </li>             
+              </li>            
               
             </ul>
           </div>
         </header>
-      </div>
-      <CardWidget />     
+        <CardWidget />
+      </div>          
       
     </>
   );

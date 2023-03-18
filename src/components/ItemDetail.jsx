@@ -13,13 +13,13 @@ const ItemDetail =({item})=> {
       <div className="row">
         <div className="col">
           <div className="row">
-            <div className="col"><img src={item.thumbnail} alt={item.title} width={120} /></div>
+            <div className="col"><img src={item.thumbnail} alt={item.nombre} width={120} /></div>
             
           </div>
         </div>
         <div className="col">
-          <h1>{item.title}</h1>
-          <p>{item.price}</p>
+          <h1>{item.nombre}</h1>
+          <p>{item.precio}</p>
           <ItemCount stock={item.stock} onAdd={onAdd}/>
         </div>
       </div>

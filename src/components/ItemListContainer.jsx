@@ -1,9 +1,9 @@
 import { db } from "../firebase/index";
-import { useEffect, useState } from "react"
-import ItemList from './ItemList'
-import { useParams } from "react-router"
-import { collection, getDocs, query, where} from "firebase/firestore"
-import Spinner from "./Spinner"
+import { useEffect, useState } from "react";
+import ItemList from './ItemList';
+import { useParams } from "react-router";
+import { collection, getDocs, query, where} from "firebase/firestore";
+import Spinner from "./Spinner";
 
 const ItemlistContainer = ()=>{
     const [prod, setProd] = useState([])
