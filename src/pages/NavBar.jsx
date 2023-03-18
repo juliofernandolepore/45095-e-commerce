@@ -16,7 +16,7 @@ const NavBar = () => {
       <div className="sticky-top-0 bg-red-600 border-b shadow-sm z-50 h-13">
         <header className="flex justify-between items-center px-4 max-w-6xl mx-auto">
           <div>
-            <Link className="navbar-brand" to={"/"}><h2 className="h2 mb-2">DESTACADO</h2></Link>
+            <Link className="navbar-brand" to={"/"}><h2 className="h2 mb-2">Juegos de Consola</h2></Link>
           </div>
           <div>
             <ul className="flex space-x-10 text-neutral-200 font-medium cursor-pointer">
@@ -39,13 +39,52 @@ const NavBar = () => {
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/tienda") && "text-black border-b-red-800"
+                  pathCoincidente("/categoria/shooter") && "text-black border-b-red-800"
                 }`}
-                onClick={() => navegacion("/tienda")}
+                onClick={() => navegacion("/categoria/shooter")}
               >
-                Tienda
-              </li>            
-              
+                Shooters
+              </li>
+              <li
+                className={`py-3 border-b-[3px] border-b-transparent ${
+                  pathCoincidente("/categoria/rpg") && "text-black border-b-red-800"
+                }`}
+                onClick={() => navegacion("/categoria/rpg")}
+              >
+                RPG
+              </li>
+              <li
+                className={`py-3 border-b-[3px] border-b-transparent ${
+                  pathCoincidente("/plataforma/PS5") && "text-black border-b-red-800"
+                }`}
+                onClick={() => navegacion("/plataforma/PS5")}
+              >
+                PlayStation 5
+              </li>
+              <li
+                className={`py-3 border-b-[3px] border-b-transparent ${
+                  pathCoincidente("/plataforma/PS4") && "text-black border-b-red-800"
+                }`}
+                onClick={() => navegacion("/plataforma/PS4")}
+              >
+                PlayStation 4
+              </li> 
+              <li
+                className={`py-3 border-b-[3px] border-b-transparent ${
+                  pathCoincidente("/categoria/version:deluxe") && "text-black border-b-red-800"
+                }`}
+                onClick={() => navegacion("/categoria/version:deluxe")}
+              >
+                Edicion Deluxe
+              </li>           
+              <li
+                className={`py-3 border-b-[3px] border-b-transparent ${
+                  pathCoincidente("/categoria/version:standard") && "text-black border-b-red-800"
+                }`}
+                onClick={() => navegacion("/categoria/version:standard")}
+              >
+                Edicion Standard
+              </li> 
             </ul>
           </div>
         </header>

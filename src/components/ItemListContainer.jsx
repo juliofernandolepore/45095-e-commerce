@@ -8,8 +8,8 @@ import Spinner from "./Spinner";
 const ItemlistContainer = ()=>{
     const [prod, setProd] = useState([])
     const [cargando, setCargando] = useState(true);
-    const {id} = useParams()
-       
+    const {id} = useParams();
+           
     useEffect(() => {        
         const coleccionDeItems = collection(db, "items");
         const consulta = id ? query(coleccionDeItems, where("categoria", "==", id) ) : coleccionDeItems
