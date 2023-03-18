@@ -6,9 +6,9 @@ import ItemDetail from "./ItemDetail";
 import Spinner from "./Spinner";
 
 const ItemDetailContainer = () => {
-const [cargando, setCargando] = useState(true);
-const [item, setItem] = useState({});
-const {id} = useParams();
+  const [item, setItem] = useState({});
+  const [cargando, setCargando] = useState(true);
+  const {id} = useParams();
 
 useEffect(()=>{  
   const documento = doc(db, "items", id);  

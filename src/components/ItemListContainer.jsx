@@ -6,15 +6,15 @@ import { collection, getDocs, query, where} from "firebase/firestore";
 import Spinner from "./Spinner";
 
 const ItemlistContainer = ()=>{
-    const [prod, setProd] = useState([])
+    const [items, setItems] = useState([])
     const [cargando, setCargando] = useState(true);
     const {id} = useParams();
            
     useEffect(() => {        
         const coleccionDeItems = collection(db, "items");
-        const consulta = id ? query(coleccionDeItems, where("categoria", "==", id) ) : coleccionDeItems
+        const consulta = id ? query(coleccionDeItems, where("categoria", "==", id) ) : coleccionDeItems;
         getDocs(consulta).then((e)=>{
-            setProd(e.docs.map(elemento =>({id:elemento.id, ...elemento.data()}))) 
+            setItems(e.docs.map(elemento =>({id:elemento.id, ...elemento.data()}))) 
             setCargando(false);
         })
       }, [id]);
@@ -22,7 +22,7 @@ const ItemlistContainer = ()=>{
     return (
         <>
         <div className="container">
-            {cargando? <Spinner/> : <ItemList prod={prod}/>}        
+            {cargando? <Spinner/> : <ItemList items={items}/>}        
         </div>         
         </>
     )

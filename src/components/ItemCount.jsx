@@ -31,7 +31,7 @@ const ItemCount = ({stock, onAdd}) => {
 
   return (
     <div className="container">
-      <div className="row my-2">
+      <div className="row my-1">
         <div className="col">
           <div className="btn-group">
               <button className="btn btn-warning" onClick={funcionDecrementarStock}>-</button>
@@ -40,7 +40,7 @@ const ItemCount = ({stock, onAdd}) => {
           </div>
         </div>
       </div>
-      <div className="row my-2">
+      <div className="row my-1">
         <div className="col">
           <div className="btn-group">
               {itemAgregado ? <Link to={"/cart"} className="btn btn-warning">finalizar la compra</Link> :

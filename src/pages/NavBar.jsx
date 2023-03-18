@@ -87,10 +87,9 @@ const NavBar = () => {
               </li> 
             </ul>
           </div>
-        </header>
-        <CardWidget />
+        </header>        
       </div>          
-      
+      <CardWidget/>
     </>
   );
 };
