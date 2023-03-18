@@ -13,7 +13,7 @@ const ItemDetail =({item})=> {
       <div className="row">
         <div className="col">
           <div className="row">
-            <div className="col"><img src={item.thumbnail} alt={item.nombre} width={120} /></div>
+            <div className="col"><img src={item.imagen} alt={item.nombre} width={120} /></div>
             
           </div>
         </div>

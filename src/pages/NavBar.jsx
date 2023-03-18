@@ -55,33 +55,33 @@ const NavBar = () => {
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/plataforma/PS5") && "text-black border-b-red-800"
+                  pathCoincidente("/plataforma/ps5") && "text-black border-b-red-800"
                 }`}
-                onClick={() => navegacion("/plataforma/PS5")}
+                onClick={() => navegacion("/plataforma/ps5")}
               >
                 PlayStation 5
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/plataforma/PS4") && "text-black border-b-red-800"
+                  pathCoincidente("/plataforma/ps4") && "text-black border-b-red-800"
                 }`}
-                onClick={() => navegacion("/plataforma/PS4")}
+                onClick={() => navegacion("/plataforma/ps4")}
               >
                 PlayStation 4
               </li> 
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/categoria/version:deluxe") && "text-black border-b-red-800"
+                  pathCoincidente("/deluxe") && "text-black border-b-red-800"
                 }`}
-                onClick={() => navegacion("/categoria/version:deluxe")}
+                onClick={() => navegacion("/deluxe")}
               >
                 Edicion Deluxe
               </li>           
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/categoria/version:standard") && "text-black border-b-red-800"
+                  pathCoincidente("/standard") && "text-black border-b-red-800"
                 }`}
-                onClick={() => navegacion("/categoria/version:standard")}
+                onClick={() => navegacion("/standard")}
               >
                 Edicion Standard
               </li> 
