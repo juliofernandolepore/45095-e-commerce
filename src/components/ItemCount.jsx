@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 
 const ItemCount = ({stock, onAdd}) => {
-  const {items, setItems} = useState (1);
-  const {itemStock, setItemStock} = useState(stock);  
-  const {itemAgregado, setItemAgregado} = useState(false);
+  const [items, setItems] = useState (1);
+  const [itemStock, setItemStock] = useState(stock);  
+  const [itemAgregado, setItemAgregado] = useState(false);
 
   const funcionIncrementarStock = ()=>{
     if (items < itemStock){

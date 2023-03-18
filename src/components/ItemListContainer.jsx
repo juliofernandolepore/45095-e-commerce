@@ -9,8 +9,10 @@ const ItemlistContainer = ()=>{
     const [items, setItems] = useState([])
     const [cargando, setCargando] = useState(true);
     const {id} = useParams();
-           
-    useEffect(() => {        
+    
+
+    useEffect(() => {
+              
         const coleccionDeItems = collection(db, "items");
         const consulta = id ? query(coleccionDeItems, where("categoria", "==", id) ) : coleccionDeItems;
         getDocs(consulta).then((e)=>{
@@ -21,7 +23,7 @@ const ItemlistContainer = ()=>{
 
     return (
         <>
-        <div className="container">
+        <div className="container d-flex flex-wrap">
             {cargando? <Spinner/> : <ItemList items={items}/>}        
         </div>         
         </>

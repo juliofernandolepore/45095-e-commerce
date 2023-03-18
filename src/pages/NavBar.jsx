@@ -13,7 +13,7 @@ const NavBar = () => {
   
   return (
     <>
-      <div className="sticky-top-0 bg-red-600 border-b shadow-sm z-50 h-13">
+      <div className="sticky-top-0 bg-black border-b shadow-sm z-50 h-13">
         <header className="flex justify-between items-center px-4 max-w-6xl mx-auto">
           <div>
             <Link className="navbar-brand" to={"/"}><h2 className="h2 mb-2">Juegos de Consola</h2></Link>
@@ -22,7 +22,7 @@ const NavBar = () => {
             <ul className="flex space-x-10 text-neutral-200 font-medium cursor-pointer">
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/") && "text-black border-b-red-800"
+                  pathCoincidente("/") && "text-blue border-b-red-800"
                 }`}
                 onClick={() => navegacion("/")}
               >
@@ -31,7 +31,7 @@ const NavBar = () => {
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/Catalogo") && "text-black border-b-red-800"
+                  pathCoincidente("/Catalogo") && "text-blue border-b-red-800"
                 }`}
                 onClick={() => navegacion("/Catalogo")}
               >
@@ -39,23 +39,23 @@ const NavBar = () => {
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/categoria/shooter") && "text-black border-b-red-800"
+                  pathCoincidente("/campo/shooter") && "text-white border-b-red-800"
                 }`}
-                onClick={() => navegacion("/categoria/shooter")}
+                onClick={() => navegacion("/campo/shooter")}
               >
                 Shooters
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/categoria/rpg") && "text-black border-b-red-800"
+                  pathCoincidente("/campo/rpg") && "text-white border-b-red-800"
                 }`}
-                onClick={() => navegacion("/categoria/rpg")}
+                onClick={() => navegacion("/campo/rpg")}
               >
                 RPG
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/plataforma/ps5") && "text-black border-b-red-800"
+                  pathCoincidente("/plataforma/ps5") && "text-white border-b-red-800"
                 }`}
                 onClick={() => navegacion("/plataforma/ps5")}
               >
@@ -63,7 +63,7 @@ const NavBar = () => {
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/plataforma/ps4") && "text-black border-b-red-800"
+                  pathCoincidente("/plataforma/ps4") && "text-white border-b-red-800"
                 }`}
                 onClick={() => navegacion("/plataforma/ps4")}
               >
@@ -71,25 +71,26 @@ const NavBar = () => {
               </li> 
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/deluxe") && "text-black border-b-red-800"
+                  pathCoincidente("/version/deluxe") && "text-white border-b-red-800"
                 }`}
-                onClick={() => navegacion("/deluxe")}
+                onClick={() => navegacion("/version/deluxe")}
               >
                 Edicion Deluxe
               </li>           
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/standard") && "text-black border-b-red-800"
+                  pathCoincidente("/version/standard") && "text-white border-b-red-800"
                 }`}
-                onClick={() => navegacion("/standard")}
+                onClick={() => navegacion("/version/standard")}
               >
                 Edicion Standard
               </li> 
             </ul>
           </div>
+          <CardWidget/>
         </header>        
       </div>          
-      <CardWidget/>
+      
     </>
   );
 };
