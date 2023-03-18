@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CartContextProvider from "./context/CartContext";
 import NavBar from './pages/NavBar'; 
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
@@ -12,7 +13,7 @@ import GraciasAviso from './components/GraciasAviso';
 import NotFound from "./components/NotFound";         
 function App() {
   return (     
-    <cartContextProvider>  
+    <CartContextProvider>  
       <Router>      
       <NavBar/>      
       <Routes>
@@ -28,7 +29,7 @@ function App() {
       </Routes>
       <Footer/>
       </Router>
-    </cartContextProvider>
+    </CartContextProvider>
   );
 }
 
