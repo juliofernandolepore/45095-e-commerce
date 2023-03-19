@@ -1,15 +1,31 @@
+import styled from "styled-components";
+
 
 const Spinner = () => {
+
+  const Cargando = styled.h1 `
+      color: black      
+      font-size: 6rem;
+      font-weight: 600;
+    `;
+
+   const ContenedorCargando = styled.div `
+    background-color: yellow;
+    padding: 5rem;
+    margin: 5rem;
+    border-radius: 0.4rem;
+   ` 
   return (   
     
     <div className="container my-5">
             <div className="row">
-                <div className="col-md-12 text-center">
-                    <h1 className="h1">Cargando...</h1>
+                <ContenedorCargando>
+                    <Cargando>Cargando...</Cargando>
                     <div class="spinner-grow" role="status">
                     <span class="visually-hidden">Aguarde un momento...</span>
-                </div>
-                </div>
+                    </div>
+                </ContenedorCargando>
+                
             </div>
         </div>
         
