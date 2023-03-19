@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
 const Item = ({ item }) => {
   
+const NombreJuego = styled.h3 `
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: red;
+`
+const ImagenJuego = styled.img `
+  border-radius: 0.3rem;
+`
   return (
     <Link to={"/item/" + item.id}> <div className="text-decoration-none text-dark">
       <div className="card-border-0">
-          <img src={item.imagen} className="card-img-top" alt={item.nombre} />
+          <ImagenJuego src={item.imagen} alt={item.nombre} />
           <div className="card-body text-center">
-            <p className="card-title">{item.nombre}</p>
+            <NombreJuego>{item.nombre}</NombreJuego>
           </div>
           </div>
       </div>
