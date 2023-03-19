@@ -13,17 +13,20 @@ const Cart = () => {
     border-radius: 0.2rem;
     padding: 1rem;
     margin: 1rem;
+    font-weight: 700;
   ` ;
   const CarritoVacio = styled.h3 `
     color: black;
     background-color: red;
     font-size: 2rem;
+    font-weight: 600;
     border-radius: 0.5rem;
     padding: 1.5rem;
     margin: 3rem;    
   ` ;
   const ConfirmarProceso = styled.button `
     color: white;
+    font-weight: 700;
     background-color: green;
     border-radius: 0.3rem;
     margin: 0.5rem;
@@ -36,7 +39,10 @@ const Cart = () => {
     border-radius: 0.3rem;
     margin-right: 2rem;
     padding: 1rem;
-  `
+  `;
+  const TachoImagen = styled.img `
+    margin-right: 3rem;
+  `;
 
   if(cartTotal() === 0){
     
@@ -67,7 +73,7 @@ const Cart = () => {
                             <td className="text-start align-middle" width="30%">{item.nombre}</td>
                             <td className="text-center align-middle" width="20%">{item.quantity} x ${item.precio}</td>
                             <td className="text-center align-middle" width="20%">${item.quantity * item.precio}</td>
-                            <td className="text-end align-middle" width="20%"><button type="button" className="btn btn-warning bg-warning" onClick={() => {removeItem(item.index)}} title={"Eliminar Producto"}><img src={basura} alt={"Eliminar Producto"} width={32} /></button></td>
+                            <td className="text-end align-middle" width="20%"><button type="button" className="btn btn-warning bg-warning" onClick={() => {removeItem(item.index)}} title={"Eliminar Producto"}><TachoImagen src={basura} alt={"Eliminar Producto"} width={32} /></button></td>
                         </tr>
                     ))
                 }
