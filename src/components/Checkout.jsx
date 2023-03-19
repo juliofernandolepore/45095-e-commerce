@@ -68,11 +68,11 @@ const Checkout = () => {
                     
                     {
                         cart.map(item => ( 
-                            <tr key={item.index}>
+                            <tr key={item.id}>
                                 <td className="text-start" width="10%"><img src={item.imagen} alt={item.nombre} width={120} /></td>
                                 <td className="text-start align-middle" width="40%">{item.nombre}</td>
-                                <td className="text-center align-middle" width="20%">{item.cantidad} x ${item.precio}</td>
-                                <td className="text-center align-middle" width="20%">${item.cantidad * item.precio}</td>
+                                <td className="text-center align-middle" width="20%">Unid. <b>{item.quantity}</b> x ${item.precio}</td>
+                                <td className="text-center align-middle" width="20%">${item.quantity * item.precio}</td>
                                 
                             </tr>
                         ))
