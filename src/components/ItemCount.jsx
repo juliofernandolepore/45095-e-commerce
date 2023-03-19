@@ -1,7 +1,16 @@
 import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
+import styled from "styled-components";
 
 const ItemCount = ({stock, onAdd}) => {
+  const ButtonCount = styled.button `
+    color: white;
+    background-color: black;
+    padding: 0.3rem 1rem;
+    margin: 0.3rem;
+    border-radius: 0.2rem;
+  `
+
   const [items, setItems] = useState (1);
   const [itemStock, setItemStock] = useState(stock);  
   const [itemAgregado, setItemAgregado] = useState(false);
@@ -34,9 +43,9 @@ const ItemCount = ({stock, onAdd}) => {
       <div className="row my-1">
         <div className="col">
           <div className="btn-group">
-              <button className="btn btn-warning" onClick={funcionDecrementarStock}>-</button>
-              <button className="btn btn-warning">{items}</button>
-              <button className="btn btn-warning" onClick={funcionIncrementarStock}>+</button>
+              <ButtonCount onClick={funcionDecrementarStock}>-</ButtonCount>
+              <ButtonCount>{items}</ButtonCount>
+              <ButtonCount onClick={funcionIncrementarStock}>+</ButtonCount>
           </div>
         </div>
       </div>
