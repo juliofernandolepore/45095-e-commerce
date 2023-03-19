@@ -8,7 +8,7 @@ const CardWidget = () => {
   const LinkCart = styled.div `
     background-color: green;
     padding: 0.7rem;
-    border-radius: 0.7rem;
+    border-radius: 0.5rem;
     height: 50px;
     width: 50px;
     position: absolute;
@@ -18,7 +18,8 @@ const CardWidget = () => {
   const SpanCart = styled.span `
     color: white;
     padding: 0.7rem;
-    margin: 0.7rem;    
+    margin: 0.7rem;
+    font-size: 0.8rem;    
   `;
   const {cartTotal} = useContext(CartContext);
 

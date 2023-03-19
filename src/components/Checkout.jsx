@@ -3,7 +3,8 @@ import { useContext, useState } from "react"
 import { CartContext} from "../context/CartContext"
 import { collection, addDoc } from "firebase/firestore";
 import { Navigate } from "react-router";
-//import swal from 'sweetalert';
+import swal from 'sweetalert';
+import styled from "styled-components";
 
 const Checkout = () => {  
       
@@ -12,25 +13,33 @@ const Checkout = () => {
       const [telefono, setTelefono] = useState(""); 
       const [orderId, setOrderId] = useState("");
       const {cart, limpiar, cartSum} = useContext(CartContext);
-        
+      const FinalizarH1 = styled.h1 `
+            color: white;
+            background-color: red;
+            border-radius: 0.3rem;
+            text-align: center;
+            padding: 0.5rem 0.2rem;
+            margin: 1rem;  
+        `;  
       const generarOrden = ()=>{
+        
         const buyer = {name:nombre, email:email, phone:telefono};
         const fecha = new Date();
         const date = `${fecha.getFullYear()}-${fecha.getMonth() + 1}-${fecha.getDate()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
         const order = {buyer:buyer, items:{cart}, date:date, total:cartSum()};
 
         if (nombre.length === 0){
-            //swal("Atencion!", "debes ingresar tu nombre!", "warning")
+            swal("Atencion!", "debes ingresar tu nombre!", "warning")
             return false;
         }
 
         if (email.length === 0){
-            //swal("Atencion!", "debes ingresar un correo electronico!", "warning")
+            swal("Atencion!", "debes ingresar un correo electronico!", "warning")
             return false;
         }
 
         if (telefono.length === 0){
-            //swal("Atencion!", "debes ingresar un numero telefono!", "warning")
+            swal("Atencion!", "debes ingresar un numero telefono!", "warning")
             return false;
         }
         
@@ -45,7 +54,7 @@ const Checkout = () => {
       return (
         <div className="container my-5">
         <div className="row">
-            <h1 className="text-center">Finalizar el proceso de compra </h1>
+            <FinalizarH1>Finalizar el proceso de compra </FinalizarH1>
             <div className="col-md-3">
                 <form>
                     <div className="mb-3">

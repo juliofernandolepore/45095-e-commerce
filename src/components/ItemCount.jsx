@@ -10,6 +10,12 @@ const ItemCount = ({stock, onAdd}) => {
     margin: 0.3rem;
     border-radius: 0.2rem;
   `
+  const Finalizar = styled.button `
+    color: white;
+    background-color: #b61212;
+    padding: 0.2rem 0.8rem;
+    border-radius: 0.2rem;
+  `
 
   const [items, setItems] = useState (1);
   const [itemStock, setItemStock] = useState(stock);  
@@ -52,8 +58,7 @@ const ItemCount = ({stock, onAdd}) => {
       <div className="row my-1">
         <div className="col">
           <div className="btn-group">
-              {itemAgregado ? <Link to={"/cart"} className="btn btn-warning">finalizar la compra</Link> :
-              <button className="btn btn-warning" onClick={addToCart}>agregar a carrito</button>}
+              {itemAgregado ? <Link to={"/cart"}> <Finalizar>Finalizar compra</Finalizar> </Link> : <Finalizar onClick={addToCart}> Agregar a carrito </Finalizar>}
           </div>
         </div>
       </div>       
