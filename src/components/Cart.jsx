@@ -1,24 +1,26 @@
-import { useContext } from "react"
-import {CartContext} from "../context/CartContext"
-import basura from "../images/basura.svg"
-import {Link} from "react-router-dom"
-import swal from "sweetalert"
+import { useContext } from "react";
+import {CartContext} from "../context/CartContext";
+import basura from "../images/basura.svg";
+import {Link} from "react-router-dom";
+//import swal from "sweetalert"
 
-const Cart = () => {   
+const Cart = () => {
+  //const alerta = swal("Ups!", "No existen productos en tu carrito!", "warning");     
   const {cart, removeItem, limpiar, cartTotal, cartSum} = useContext(CartContext); 
 
   if(cartTotal() === 0){
-    swal("Ups!", "No existen productos en tu carrito!", "warning");
+    
     return (
+
     <div className="container">
                 <div className="row">
                     <div className="col-md-12">
                     <div className="alert alert-warning text-center" role="alert">el carrito no contiene ningun producto!</div>
                 </div>
             </div>
-    </div>)
+    </div>)    
   }
-
+  
   return (    
     <div className="container my-5">
     <div className="row">
@@ -43,7 +45,7 @@ const Cart = () => {
                     <td colSpan={2}>&nbsp;</td>
                     <td className="text-center">Total a Pagar</td>
                     <td className="text-center"><b>${cartSum()}</b></td>
-                    <td className="text-end"><Link to={"/checkout"} className="btn btn-warning bg-warning">Finalizar el proceso de Compra</Link></td>
+                    <td className="text-end"><Link to={"/Checkout"} className="btn btn-warning bg-warning">Finalizar el proceso de Compra</Link></td>
                 </tr>
             </table>
         </div>

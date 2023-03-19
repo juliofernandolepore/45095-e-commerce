@@ -19,7 +19,7 @@ const ItemDetail =({item})=> {
           <h1>Titulo: <b>{item.nombre}</b></h1>
           <p>Plataforma: <b>{item.plataforma}</b></p>
           <p>{item.descripcion}</p>
-          <p> Precio: <b>${item.precio} </b></p>
+          <p> Precio: <b>${item.precio}</b></p>
           <ItemCount stock={item.stock} onAdd={onAdd}/>
         </div>
       </div>
