@@ -43,6 +43,18 @@ const Cart = () => {
   const TachoImagen = styled.img `
     margin-right: 3rem;
   `;
+  const TituloJuego = styled.td`
+    color: black;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 2rem;
+    padding-left: 2rem; 
+  `;
+  const MicroImg = styled.img `
+    border: black solid 2px;
+    border-radius: 0.2rem;
+    margin-left: 1rem;
+  `
 
   if(cartTotal() === 0){
     
@@ -69,8 +81,8 @@ const Cart = () => {
                 {
                     cart.map(item => ( 
                         <tr key={item.index}>
-                            <td className="text-start" width="10%"><img src={item.imagen} alt={item.nombre} width={120} /></td>
-                            <td className="text-start align-middle" width="30%">{item.nombre}</td>
+                            <td className="text-start" width="10%"><MicroImg src={item.imagen} alt={item.nombre} width={120} /></td>
+                            <TituloJuego>{item.nombre}</TituloJuego>
                             <td className="text-center align-middle" width="20%">{item.quantity} x ${item.precio}</td>
                             <td className="text-center align-middle" width="20%">${item.quantity * item.precio}</td>
                             <td className="text-end align-middle" width="20%"><button type="button" className="btn btn-warning bg-warning" onClick={() => {removeItem(item.index)}} title={"Eliminar Producto"}><TachoImagen src={basura} alt={"Eliminar Producto"} width={32} /></button></td>

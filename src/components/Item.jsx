@@ -10,6 +10,7 @@ const NombreJuego = styled.h3 `
 `
 const ImagenJuego = styled.img `
   border-radius: 0.3rem;
+  border: solid black 2px;
 `
   return (
     <Link to={"/item/" + item.id}> <div className="text-decoration-none text-dark">
