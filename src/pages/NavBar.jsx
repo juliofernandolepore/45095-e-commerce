@@ -15,6 +15,9 @@ const NavBar = () => {
     <>
       <div className="sticky-top-0 bg-black border-b shadow-sm z-50 h-13">
         <header className="flex justify-between items-center px-4 max-w-6xl mx-auto">
+        <div className="my-1">
+        <CardWidget/>
+        </div>
           <div>
             <Link className="navbar-brand" to={"/"}><h2 className="h2 mb-2">Juegos de Consola</h2></Link>
           </div>
@@ -39,17 +42,17 @@ const NavBar = () => {
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/campo/shooter") && "text-white border-b-red-800"
+                  pathCoincidente("/categoria/shooter") && "text-white border-b-red-800"
                 }`}
-                onClick={() => navegacion("/campo/shooter")}
+                onClick={() => navegacion("/categoria/shooter")}
               >
                 Shooters
               </li>
               <li
                 className={`py-3 border-b-[3px] border-b-transparent ${
-                  pathCoincidente("/campo/rpg") && "text-white border-b-red-800"
+                  pathCoincidente("/categoria/rpg") && "text-white border-b-red-800"
                 }`}
-                onClick={() => navegacion("/campo/rpg")}
+                onClick={() => navegacion("/categoria/rpg")}
               >
                 RPG
               </li>
@@ -86,9 +89,8 @@ const NavBar = () => {
                 Edicion Standard
               </li> 
             </ul>
-          </div>
-          <CardWidget/>
-        </header>        
+          </div>          
+        </header>                
       </div>          
       
     </>

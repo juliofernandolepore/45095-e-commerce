@@ -10,14 +10,14 @@ const Checkout = () => {
       const [nombre, setNombre] = useState("");
       const [correo, setCorreo] = useState("");
       const [telefono, setTelefono] = useState(""); 
-      const [orderId, setOrdenId] = useState("");
-      const {carrito,  limpiar, carritoSuma} = useContext(CartContext);
+      const [orderId, setOrderId] = useState("");
+      const {cart,  limpiar, cartSum} = useContext(CartContext);
         
       const generarOrden = ()=>{
         const comprador = {nombre:nombre, correo:correo, telefono:telefono}
         const fecha = new Date();
         const fechaDeCompra =  `${fecha.getHours()} ${fecha.getMinutes()} ${fecha.getSeconds()} ${fecha.getDay()} ${fecha.getMonth() + 1} ${fecha.getFullYear()}` 
-        const orden = {comprador:comprador, items:{carrito}, fecha:fechaDeCompra, total:carritoSuma()};
+        const orden = {comprador:comprador, items:{cart}, fecha:fechaDeCompra, total:cartSum()};
 
         if (nombre.length === 0){
             swal("Atencion!", "debes ingresar tu nombre!", "warning")
@@ -36,7 +36,7 @@ const Checkout = () => {
         
         const coleccionDeOrdenes = collection(db, "ordenes");
         addDoc(coleccionDeOrdenes, orden).then(data => {
-                setOrdenId(data.id)
+                setOrderId(data.id)
                 limpiar();
         });        
 
@@ -67,7 +67,7 @@ const Checkout = () => {
                 <table className="table">
                     
                     {
-                        carrito.map(item => ( 
+                        cart.map(item => ( 
                             <tr key={item.id}>
                                 <td className="text-start" width="10%"><img src={item.imagen} alt={item.nombre} width={120} /></td>
                                 <td className="text-start align-middle" width="40%">{item.nombre}</td>
@@ -80,8 +80,8 @@ const Checkout = () => {
                     <tr>
                         <td colSpan={2}>&nbsp;</td>
                         <td className="text-center">Total a Pagar</td>
-                        <td className="text-center"><b>${carritoSuma()}</b></td>
-                        
+                        <td className="text-center"><b>${cartSum()}</b></td>
+                
                     </tr>
                 </table>
             </div>

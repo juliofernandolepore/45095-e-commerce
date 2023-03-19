@@ -9,17 +9,17 @@ const ItemDetail =({item})=> {
   }
 
   return (
-    <div className="container">
+    <div className="container m-5">
       <div className="row my-5">
         <div className="col d-flex align-items-center justify-end">
             <img src={item.imagen} alt={item.nombre}/>            
           </div>
         <div className="col d-flex align-items-center">
         <div>
-          <h1>{item.nombre}</h1>
-          <p>{item.plataforma}</p>
+          <h1>Titulo: <b>{item.nombre}</b></h1>
+          <p>Plataforma: <b>{item.plataforma}</b></p>
           <p>{item.descripcion}</p>
-          <p> <b>${item.precio} </b></p>
+          <p> Precio: <b>${item.precio} </b></p>
           <ItemCount stock={item.stock} onAdd={onAdd}/>
         </div>
       </div>

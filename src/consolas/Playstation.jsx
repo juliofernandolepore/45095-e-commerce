@@ -1,11 +1,11 @@
 import { db } from "../firebase/index";
 import { useEffect, useState } from "react";
-import ItemList from './ItemList';
+import ItemList from '../components/ItemList';
 import { useParams } from "react-router";
 import { collection, getDocs, query, where} from "firebase/firestore";
-import Spinner from "./Spinner";
+import Spinner from "../components/Spinner";
 
-const ItemlistContainer = ()=>{
+const Playstation = ()=>{
     const [items, setItems] = useState([])
     const [cargando, setCargando] = useState(true);
     const {id} = useParams();
@@ -13,8 +13,8 @@ const ItemlistContainer = ()=>{
 
     useEffect(() => {
         const coleccionDeItems = collection(db, "items");        
-        const consulta = id ? query(coleccionDeItems, where("categoria", "==", id) ) : coleccionDeItems;
-        getDocs(consulta).then((e)=>{
+        const consulta3 = id ? query(coleccionDeItems, where("plataforma", "==", id) ) : coleccionDeItems;
+        getDocs(consulta3).then((e)=>{
             setItems(e.docs.map(elemento =>({id:elemento.id, ...elemento.data()}))) 
             setCargando(false);
         })
@@ -28,5 +28,4 @@ const ItemlistContainer = ()=>{
         </>
     )
 }
-export default ItemlistContainer
-
+export default Playstation

@@ -8,8 +8,8 @@ const CartContextProvider = ({children}) => {
 
   const addItem = (item, quantity) =>{
 
-    if(existencia(item.itemId)){
-      let posicion = cart.findIndex(e => e.id === item.id)      
+    if(existencia(item.index)){
+      let posicion = cart.findIndex(e => e.index === item.index)      
       cart[posicion].quantity += quantity;
       setCart([...cart])
     }else{      
@@ -18,7 +18,7 @@ const CartContextProvider = ({children}) => {
   }
 
   const removeItem = (itemId) =>{
-     const filtrado = cart.filter(item=>item.id !== itemId);      
+     const filtrado = cart.filter(item=>item.index !== itemId);      
       setCart([...filtrado]);
   }
 
@@ -27,7 +27,7 @@ const CartContextProvider = ({children}) => {
   }
   
   const existencia = (itemId) => {    
-      return cart.some(item=> item.id === itemId)
+      return cart.some(item=> item.index === itemId)
   }  
 
   const totalWidget = ()=>{
