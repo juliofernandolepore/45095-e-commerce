@@ -1,7 +1,7 @@
 import { db } from "../firebase/index";
 import { useEffect, useState } from "react";
 import ItemList from './ItemList';
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where} from "firebase/firestore";
 import Spinner from "./Spinner";
 
@@ -14,8 +14,8 @@ const ItemlistContainer = ()=>{
     useEffect(() => {
         const coleccionDeItems = collection(db, "items");        
         const consulta = id ? query(coleccionDeItems, where("categoria", "==", id) ) : coleccionDeItems;
-        getDocs(consulta).then((e)=>{
-            setItems(e.docs.map(elemento =>({id:elemento.id, ...elemento.data()}))) 
+        getDocs(consulta).then((elements)=>{
+            setItems(elements.docs.map(el =>({id:el.id, ...el.data()}))) 
             setCargando(false);
         })
       }, [id]);

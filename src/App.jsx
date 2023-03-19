@@ -22,11 +22,12 @@ function App() {
         <Route path="/categoria/:id" element={<ItemlistContainer/>}/>
         <Route path='/item/:id' element={<ItemDetailContainer/>}/>
         <Route path ="/Cart" element={<Cart/>}/>
-        <Route path ="/checkout" element={<Checkout />}/>                               
+        <Route path ="/Checkout" element={<Checkout />}/>                               
         <Route path ="/gracias/:orderId" element={<GraciasAviso />}/>
-        <Route path="*" element={<NotFound/>}/>
+        <Route path ="/cart/" element={<Cart/>}/>
         <Route path="/plataforma/:id" element={<Playstation/>}/>
         <Route path="/version/:id" element={<Edicion/>}/>
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
       <Footer/>
       </Router>

@@ -9,7 +9,7 @@ const CardWidget = () => {
   return (
     <>
     {cartTotal() > 0 ? 
-    <Link to={"/cart/"}>
+    <Link to={"/Cart"}>
       <div className="bg-green-400 w-14 m-1 p-1 rounded text-center">        
         <img src={cart} alt={"carrito de compras en proceso"} width={30} />{cartTotal()}
         <span className="position-absolute top-0 start-100 traslate-middle badge rounded-pill bg-danger">

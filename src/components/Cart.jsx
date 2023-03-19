@@ -45,7 +45,7 @@ const Cart = () => {
                     <td colSpan={2}>&nbsp;</td>
                     <td className="text-center">Total a Pagar</td>
                     <td className="text-center"><b>${cartSum()}</b></td>
-                    <td className="text-end"><Link to={"/Checkout"} className="btn btn-warning bg-warning">Finalizar el proceso de Compra</Link></td>
+                    <td className="text-end"><Link to={"/checkout"} className="btn btn-warning bg-warning">Finalizar el proceso de Compra</Link></td>
                 </tr>
             </table>
         </div>
@@ -55,4 +55,4 @@ const Cart = () => {
 )
 }
 
-export default Cart
+export default Cart;

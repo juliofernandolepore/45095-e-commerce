@@ -1,41 +1,41 @@
 import {db} from "../firebase/index";
 import { useContext, useState } from "react"
-import {CartContext} from "../context/CartContext"
+import { CartContext} from "../context/CartContext"
 import { collection, addDoc } from "firebase/firestore";
 import { Navigate } from "react-router";
-import swal from 'sweetalert';
+//import swal from 'sweetalert';
 
 const Checkout = () => {  
       
       const [nombre, setNombre] = useState("");
-      const [correo, setCorreo] = useState("");
+      const [email, setEmail] = useState("");
       const [telefono, setTelefono] = useState(""); 
       const [orderId, setOrderId] = useState("");
-      const {cart,  limpiar, cartSum} = useContext(CartContext);
+      const {cart, limpiar, cartSum} = useContext(CartContext);
         
       const generarOrden = ()=>{
-        const comprador = {nombre:nombre, correo:correo, telefono:telefono}
+        const buyer = {name:nombre, email:email, phone:telefono};
         const fecha = new Date();
-        const fechaDeCompra =  `${fecha.getHours()} ${fecha.getMinutes()} ${fecha.getSeconds()} ${fecha.getDay()} ${fecha.getMonth() + 1} ${fecha.getFullYear()}` 
-        const orden = {comprador:comprador, items:{cart}, fecha:fechaDeCompra, total:cartSum()};
+        const date = `${fecha.getFullYear()}-${fecha.getMonth() + 1}-${fecha.getDate()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
+        const order = {buyer:buyer, items:{cart}, date:date, total:cartSum()};
 
         if (nombre.length === 0){
-            swal("Atencion!", "debes ingresar tu nombre!", "warning")
+            //swal("Atencion!", "debes ingresar tu nombre!", "warning")
             return false;
         }
 
-        if (correo.length === 0){
-            swal("Atencion!", "debes ingresar un correo electronico!", "warning")
+        if (email.length === 0){
+            //swal("Atencion!", "debes ingresar un correo electronico!", "warning")
             return false;
         }
 
         if (telefono.length === 0){
-            swal("Atencion!", "debes ingresar un numero telefono!", "warning")
+            //swal("Atencion!", "debes ingresar un numero telefono!", "warning")
             return false;
         }
         
         const coleccionDeOrdenes = collection(db, "ordenes");
-        addDoc(coleccionDeOrdenes, orden).then(data => {
+        addDoc(coleccionDeOrdenes, order).then(data => {
                 setOrderId(data.id)
                 limpiar();
         });        
@@ -54,7 +54,7 @@ const Checkout = () => {
                     </div>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email</label>
-                        <input type="text" className="form-control" id="email" onInput={(e) => {setCorreo(e.target.value)}} />
+                        <input type="text" className="form-control" id="email" onInput={(e) => {setEmail(e.target.value)}} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="telefono" className="form-label">Teléfono</label>
@@ -68,7 +68,7 @@ const Checkout = () => {
                     
                     {
                         cart.map(item => ( 
-                            <tr key={item.id}>
+                            <tr key={item.index}>
                                 <td className="text-start" width="10%"><img src={item.imagen} alt={item.nombre} width={120} /></td>
                                 <td className="text-start align-middle" width="40%">{item.nombre}</td>
                                 <td className="text-center align-middle" width="20%">{item.cantidad} x ${item.precio}</td>
@@ -91,4 +91,4 @@ const Checkout = () => {
     )
     }
 
-export default Checkout
+export default Checkout;

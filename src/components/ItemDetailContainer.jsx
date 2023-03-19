@@ -1,7 +1,7 @@
 import {db} from "../firebase/index";
 import { doc, getDoc} from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import Spinner from "./Spinner";
 

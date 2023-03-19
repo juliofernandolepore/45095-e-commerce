@@ -19,7 +19,7 @@ const NavBar = () => {
         <CardWidget/>
         </div>
           <div>
-            <Link className="navbar-brand" to={"/"}><h2 className="h2 mb-2">Juegos de Consola</h2></Link>
+            <Link className="navbar-brand" to={"/"}><h2 className="text-white">Playstation</h2></Link>
           </div>
           <div>
             <ul className="flex space-x-10 text-neutral-200 font-medium cursor-pointer">
