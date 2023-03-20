@@ -20,13 +20,11 @@ const ItemlistContainer = ()=>{
         })
       }, [id]);
 
-    return (
-        <>
-        <div className="container d-flex flex-wrap">
+      
+    return (        
+        <div>
             {cargando? <Spinner/> : <ItemList items={items}/>}        
-        </div>         
-        </>
-    )
+        </div>        
+        )
 }
-export default ItemlistContainer
-
+export default ItemlistContainer;
